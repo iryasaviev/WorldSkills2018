@@ -24,5 +24,15 @@ namespace DesktopWPF
         {
             InitializeComponent();
         }
+
+        private void SignInBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SignUpBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

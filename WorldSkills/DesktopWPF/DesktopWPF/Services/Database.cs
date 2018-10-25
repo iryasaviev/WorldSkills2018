@@ -9,6 +9,7 @@ namespace DesktopWPF.Services
         public SqlConnection ConnectionOpen()
         {
             SqlConnection connection = new SqlConnection(ConnectionString);
+            connection.Open();
 
             return connection;
         }

@@ -50,11 +50,13 @@
 							Margin="0, 10">
 					<TextBlock FontSize="14">Роль</TextBlock>
 					<ComboBox Name="RoleInp"
-							 FontSize="14"
-							 Height="30"
-							 Padding="7,5">
-						<TextBlock>Role 1</TextBlock>
-						<TextBlock>Role 2</TextBlock>
+							  FontSize="14"
+							  Height="30"
+							  Padding="7,5">
+						<TextBlock>Заказчик</TextBlock>
+						<TextBlock>Менеджер</TextBlock>
+						<TextBlock>Кладовщик</TextBlock>
+						<TextBlock>Дирекция</TextBlock>
 					</ComboBox>
 				</StackPanel>
 				<StackPanel Orientation="Vertical"

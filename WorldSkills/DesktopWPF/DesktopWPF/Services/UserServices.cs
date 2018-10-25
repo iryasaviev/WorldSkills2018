@@ -18,5 +18,10 @@ namespace DesktopWPF.Services
         {
             _crud.Add("User", data);
         }
+
+        //public string GetUserEmail()
+        //{
+        //    return _crud.GetItem();
+        //}
     }
 }

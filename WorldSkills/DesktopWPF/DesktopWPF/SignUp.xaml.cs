@@ -17,11 +17,14 @@ namespace DesktopWPF
 
         private void SignUpBtn_Click(object sender, RoutedEventArgs e)
         {
-            List<string> data = new List<string>();
+            List<string> data = new List<string>
+            {
+                NameInp.Text,
+                EmailInp.Text,
+                RoleInp.Text,
+                PasswordInp.Password.ToString(),
+            };
 
-            data.Add(NameInp.Text);
-            data.Add(EmailInp.Text);
-            data.Add(NameInp.Text);
 
             UserServices uServices = new UserServices();
 

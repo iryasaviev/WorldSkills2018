@@ -22,23 +22,35 @@ namespace DesktopWPF.Services
             {
                 if (values == "")
                 {
-                    values = d + ",";
+                    values = "'" + d + "'" + ", ";
                 }
                 else
                 {
-                    values = values + d + ",";
+                    values = values + "'" + d + "'" + ", ";
                 }
             }
+
+            // Удаляет последний символ (",") с троке.
+            values = values.Substring(0, values.Length - 2);
+
 
 
             // Открывает и возвращает подключение.
             var connection = _database.ConnectionOpen();
-
-
-            SqlCommand command = new SqlCommand();
-
-            command.Connection = connection;
-            command.CommandText = "INSERT INTO " + tableName + " VALUES (" + values + ")";
+            
+            SqlCommand command = new SqlCommand {
+                Connection = connection,
+                CommandType = System.Data.CommandType.Text,
+                CommandText = "INSERT INTO " + '"' + tableName + '"' + " VALUES (" + values + ")"
+            };
         }
+
+        //public string GetItem(string tableName)
+        //{
+        //    // Открывает и возвращает подключение.
+        //    var connection = _database.ConnectionOpen();
+
+        //    return reader.GetName(0);
+        //}
     }
 }

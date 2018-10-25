@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:DesktopWPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-		
+	<Grid>
+
 		<!--Header-->
 		<StackPanel Orientation="Vertical"
 					VerticalAlignment="Top"

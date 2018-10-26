@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DesktopWPF.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,35 @@ namespace DesktopWPF
         public SignIn()
         {
             InitializeComponent();
+        }
+
+        private void SignInBtn_Click(object sender, RoutedEventArgs e)
+        {
+            UserServices uServices = new UserServices();
+
+            var user = uServices.Get(LoginInp.Text);
+
+            if (user != null)
+            {
+                foreach (var u in user)
+                {
+                    if (u.Key == "Password")
+                    {
+                        if (u.Value != PasswordInp.Password)
+                        {
+                            // TODO: Вывести ошибку о неправильном пароле (высокий).
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                // TODO: Вывести ошибку об отсутствии введенного логина в базе (высокий).
+            }
         }
     }
 }

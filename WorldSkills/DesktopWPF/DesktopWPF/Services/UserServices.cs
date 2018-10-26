@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace DesktopWPF.Services
 {
@@ -18,10 +14,10 @@ namespace DesktopWPF.Services
         {
             _crud.Add("User", data);
         }
-
-        //public string GetUserEmail()
-        //{
-        //    return _crud.GetItem();
-        //}
+        
+        public Dictionary<string, string> Get(string login)
+        {
+            return _crud.GetString("User", "Login = " + "'" + login + "'");
+        }
     }
 }

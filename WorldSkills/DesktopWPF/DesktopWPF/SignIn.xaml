@@ -65,7 +65,7 @@
 							BorderBrush="#b5d5ca"
 							Background="#b5d5ca"
 							Foreground="#fff"
-							FontSize="14">Войти</Button>
+							FontSize="14" Click="SignInBtn_Click">Войти</Button>
 				</StackPanel>
 			</StackPanel>
 

@@ -1,18 +1,8 @@
 ﻿using DesktopWPF.Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace DesktopWPF
 {
@@ -32,7 +22,7 @@ namespace DesktopWPF
 
             var user = uServices.Get(LoginInp.Text);
 
-            if (user != null)
+            if (user.Count != 0)
             {
                 foreach (var u in user)
                 {
@@ -40,18 +30,24 @@ namespace DesktopWPF
                     {
                         if (u.Value != PasswordInp.Password)
                         {
-                            // TODO: Вывести ошибку о неправильном пароле (высокий).
+                            LoginErrorMess.Content = "";
+                            PasswordErrorMess.Content = "Неверный пароль.";
                         }
                         else
                         {
-                            break;
+                            NavigationService nav = NavigationService.GetNavigationService(this);
+                            nav.Navigate(new Uri("Views/CustomerScreen.xaml", UriKind.Relative));
+
+                            uServices.SetCookie();
                         }
+                        break;
                     }
                 }
             }
             else
             {
-                // TODO: Вывести ошибку об отсутствии введенного логина в базе (высокий).
+                PasswordErrorMess.Content = "";
+                LoginErrorMess.Content = "Пользователя с таким Email нет в базе.";
             }
         }
     }

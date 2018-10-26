@@ -57,15 +57,18 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Services\UserServices.cs" />
-    <Compile Include="SignIn.xaml.cs">
+    <Compile Include="Views\SignIn.xaml.cs">
       <DependentUpon>SignIn.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\CrudServices.cs" />
     <Compile Include="Services\Database.cs" />
-    <Compile Include="SignUp.xaml.cs">
+    <Compile Include="Views\SignUp.xaml.cs">
       <DependentUpon>SignUp.xaml</DependentUpon>
     </Compile>
-    <Page Include="SignIn.xaml">
+    <Compile Include="Views\CustomerScreen.xaml.cs">
+      <DependentUpon>CustomerScreen.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\SignIn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -81,7 +84,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="SignUp.xaml">
+    <Page Include="Views\SignUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CustomerScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -18,13 +18,13 @@ namespace DesktopWPF
         private void SignUpBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService nav = NavigationService.GetNavigationService(this);
-            nav.Navigate(new Uri("SignUp.xaml", UriKind.Relative));
+            nav.Navigate(new Uri("Views/SignUp.xaml", UriKind.Relative));
         }
 
         private void SignInBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService nav = NavigationService.GetNavigationService(this);
-            nav.Navigate(new Uri("SignIn.xaml", UriKind.Relative));
+            nav.Navigate(new Uri("Views/SignIn.xaml", UriKind.Relative));
         }
     }
 }

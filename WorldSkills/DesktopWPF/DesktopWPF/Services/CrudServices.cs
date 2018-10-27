@@ -34,15 +34,17 @@ namespace DesktopWPF.Services
             values = values.Substring(0, values.Length - 2);
 
 
-
             // Открывает и возвращает подключение.
-            var connection = _database.ConnectionOpen();
-            
-            SqlCommand command = new SqlCommand {
-                Connection = connection,
+            SqlConnection connection = _database.ConnectionOpen();
+
+            SqlCommand command = new SqlCommand
+            {
                 CommandType = System.Data.CommandType.Text,
-                CommandText = "INSERT INTO " + '"' + tableName + '"' + " VALUES (" + values + ")"
+                CommandText = "INSERT INTO " + '"' + tableName + '"' + " VALUES (" + values + ")",
+                Connection = connection
             };
+
+            command.ExecuteNonQuery();
         }
 
 
@@ -52,7 +54,7 @@ namespace DesktopWPF.Services
             SqlConnection connection = _database.ConnectionOpen();
 
 
-            string request = request = "SELECT TOP 1 * FROM " + '"' + tableName + '"' + " WHERE " + condition;
+            string request = "SELECT TOP 1 * FROM " + '"' + tableName + '"' + " WHERE " + condition;
 
             SqlCommand command = new SqlCommand
             {
